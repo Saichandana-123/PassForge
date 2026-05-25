@@ -9,6 +9,10 @@ PassForge is a single-file static password generator web app that creates crypto
 - Password visibility toggle, copy, and download
 - Entropy evaluation and multiple password generation
 
+## Live Demo
+
+- Try the app live at: https://pass-forge-eosin.vercel.app/
+
 
 
 

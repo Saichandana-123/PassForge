@@ -5,7 +5,7 @@ const DIGITS  = '0123456789';
 const SYMBOLS = '!@#$%^&*()-_=+[]{}|;:,.<>?';
 
 // ── State ──
-let count = 5;
+let count = 1;
 let sets  = { upper: true, digits: true, symbols: false };
 let lastPasswords = [];
 let showPasswords = false;
@@ -150,11 +150,33 @@ function updateUI() {
   document.getElementById('entropy-num').innerHTML   = `${bits}<span>bits</span>`;
   document.getElementById('entropy-bar').style.width = pct + '%';
   document.getElementById('entropy-grade').textContent = entropyGrade(bits);
+  
+  // Update attempts value
+  updateAttemptsDisplay(bits);
+}
+
+function updateAttemptsDisplay(bits) {
+  const attemptsEl = document.getElementById('attempts-value');
+  if (!attemptsEl) return;
+  
+  if (bits < 40) {
+    attemptsEl.textContent = '1 in 10^12';
+  } else if (bits < 60) {
+    attemptsEl.textContent = '1 in 10^18';
+  } else if (bits < 80) {
+    attemptsEl.textContent = '1 in 10^24';
+  } else if (bits < 100) {
+    attemptsEl.textContent = `1 in 10^${Math.round(bits)}`;
+  } else if (bits < 128) {
+    attemptsEl.textContent = `1 in 10^${Math.round(bits)}`;
+  } else {
+    attemptsEl.textContent = `1 in 10^${Math.round(bits)}`;
+  }
 }
 
 function setCount(n) {
   count = n;
-  document.querySelectorAll('.count-opt').forEach(el => {
+  document.querySelectorAll('.count-btn').forEach(el => {
     el.classList.toggle('active', parseInt(el.textContent) === n);
   });
 }

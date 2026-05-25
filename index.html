@@ -96,16 +96,35 @@
   <!-- Count -->
   <div class="section-label">How Many</div>
   <div class="count-grid">
-    <div class="count-opt active" onclick="setCount(5)">5</div>
-    <div class="count-opt"       onclick="setCount(10)">10</div>
-    <div class="count-opt"       onclick="setCount(15)">15</div>
-    <div class="count-opt"       onclick="setCount(20)">20</div>
+    <div class="count-btn active" onclick="setCount(1)" data-count="1">1</div>
+    <div class="count-btn" onclick="setCount(2)" data-count="2">2</div>
+    <div class="count-btn" onclick="setCount(5)" data-count="5">5</div>
+    <div class="count-btn" onclick="setCount(10)" data-count="10">10</div>
+  </div>
+
+  <hr class="divider" />
+
+  <!-- 1 in how many -->
+  <div class="section-label">1 in How Many</div>
+  <div class="attempts-display">
+    <div class="attempts-value" id="attempts-value">1 in 10^95</div>
+    <div class="attempts-label">attempts to crack</div>
   </div>
 
   <!-- Generate -->
   <button class="gen-btn" onclick="generate()">
     <span id="gen-label">Generate &rarr;</span>
   </button>
+
+  <div class="sidebar-footer">
+    <a href="https://github.com/Saichandana-123" target="_blank" rel="noopener">  GitHub </a>
+    <div class="footer-credit"><span class="footer-heart">&#9829;</span><span>Crafted by Saichandana</span></div>
+  </div>
+
+</aside>
+
+<!-- ── RIGHT PANEL — Output ── -->
+<main class="main">
   <div class="main-header">
     <div class="main-title">Generated Passwords</div>
     <div class="main-actions">
@@ -121,13 +140,7 @@
       <div class="empty-sub">Configure and click Generate</div>
     </div>
   </div>
-
-  <div class="sidebar-footer">
-    <a href="https://github.com/Saichandana-123" target="_blank" rel="noopener">  GitHub </a>
-    <div class="footer-credit"><span class="footer-heart">&#9829;</span><span>Crafted by Saichandana</span></div>
-  </div>
-
-</aside>
+</main>
 
 <script src="script.js"></script>
 </body>
